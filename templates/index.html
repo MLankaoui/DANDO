@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 <body>
-    
+    <div class="container">
+        {% block content %}
+            {% include 'assets/input.html' %}
+        {% endblock content %}
+    </div>
 </body>
 </html>

@@ -1,7 +1,8 @@
-<form action="">
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Submit">
-</form>
+{% block content %}
+    <form action="">
+        <label for="fname"> <h1 style="display: inline; font-weight: bolder; color:black;" > add: </h1></label>
+        <input type="text" id="fname" name="fname" class="add-todo">
+        <button class="add" type="submit"> Add </button>
+        <br><br>
+    </form>
+{% endblock content %}

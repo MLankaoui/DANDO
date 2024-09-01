@@ -4,3 +4,26 @@
     margin: 0;
     background-color: #4d4d4d;
 }
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.add-todo {
+    padding: 5px;
+    background-color: white;
+    border: 4px dotted black;
+}
+
+.add {
+    padding-right: 30px;
+    border: 2px solid black;
+    padding-left: 30px;
+    border-radius: 30px;
+    background-color: white;
+    font-size:larger;
+    cursor: pointer;
+}
