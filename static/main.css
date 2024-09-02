@@ -15,7 +15,8 @@
 .add-todo {
     padding: 5px;
     background-color: white;
-    border: 4px dotted black;
+    border: none;
+    border-radius: 10px;
 }
 
 .add {
