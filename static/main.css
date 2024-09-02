@@ -25,7 +25,7 @@
     border: 2px solid black;
     padding-left: 30px;
     border-radius: 30px;
-    background-color: white;
+    background-color: rgb(10, 58, 190);
     font-size:larger;
     cursor: pointer;
 }
@@ -40,6 +40,8 @@
     border-radius: 20px;
     margin-bottom: 20px;
     font-weight: bolder;
+    border: none;
+    color: white;
 }
 .delete {
     padding: 10px;
