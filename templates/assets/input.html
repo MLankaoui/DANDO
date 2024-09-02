@@ -16,6 +16,11 @@
                     {% csrf_token %}
                     <button class="delete" type="submit">Delete</button>
                 </form>
+
+                <form action="{% url 'delete_todo' todo.id %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button class="update" type="submit">Update</button>
+                </form>
             </li>
         {% endfor %}
     </ul>

@@ -1,11 +1,13 @@
+/* Apply consistent box-sizing and background color */
 * {
     padding: 0;
-    box-sizing: border-box;
     margin: 0;
+    box-sizing: border-box;
     background-color: #4d4d4d;
     font-family: "Oswald", sans-serif;
 }
 
+/* Center the container horizontally and vertically */
 .container {
     position: absolute;
     top: 50%;
@@ -13,46 +15,70 @@
     transform: translate(-50%, -50%);
 }
 
+/* Style for the input field */
 .add-todo {
     padding: 5px;
     background-color: white;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 10px;
+    font-size: 16px;
 }
 
+/* Style for the Add button */
 .add {
-    padding-right: 30px;
+    padding: 10px 20px;
     border: 2px solid black;
-    padding-left: 30px;
     border-radius: 30px;
     background-color: rgb(10, 58, 190);
-    font-size:larger;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
+    font-weight: bold;
 }
 
+/* Style for list items */
 .todos {
-    padding: 20px;
+    padding: 10px 20px;
     list-style: none;
     border: 1px solid black;
     background: white;
-    font-size: larger;
-    color: #4d4d4d;
+    color: black;
     border-radius: 20px;
     margin-bottom: 20px;
-    font-weight: bolder;
-    border: none;
-    color: white;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+/* Style for Delete button */
 .delete {
-    padding: 10px;
+    padding: 5px 10px;
     color: white;
     border: none;
     border-radius: 10px;
-    list-style: none;
-    position: absolute;
-    right: 5%;
     background-color: red;
     cursor: pointer;
-    margin-bottom: 2px;
-    font-weight: bolder;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Style for Update button */
+.update {
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Add some space around the container for better appearance */
+.container {
+    padding: 20px;
 }

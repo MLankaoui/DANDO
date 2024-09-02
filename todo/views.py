@@ -18,10 +18,13 @@ def home(request):
     return render(request, 'index.html', context)
 
 
-def delete(request, todo_id):
+def delete_todo(request, todo_id):
 
     if request.method == 'POST':
         todo = get_object_or_404(Todos, id=todo_id)
         todo.delete()
         return redirect('home')
     
+
+def update_todo(request, todo_id):
+    pass
