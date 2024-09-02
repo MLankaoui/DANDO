@@ -10,7 +10,13 @@
     </form>
     <ul>
         {% for todo in todos %}
-            <li class="todos">{{ todo.content }}</li>
+            <li class="todos">
+                {{ todo.content }} 
+                <form action="{% url 'delete_todo' todo.id %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button class="delete" type="submit">Delete</button>
+                </form>
+            </li>
         {% endfor %}
     </ul>
 {% endblock content %}

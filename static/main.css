@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     background-color: #4d4d4d;
+    font-family: "Oswald", sans-serif;
 }
 
 .container {
@@ -38,4 +39,18 @@
     color: #4d4d4d;
     border-radius: 20px;
     margin-bottom: 20px;
+    font-weight: bolder;
+}
+.delete {
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    list-style: none;
+    position: absolute;
+    right: 5%;
+    background-color: red;
+    cursor: pointer;
+    margin-bottom: 2px;
+    font-weight: bolder;
 }
