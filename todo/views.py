@@ -27,4 +27,11 @@ def delete_todo(request, todo_id):
     
 
 def update_todo(request, todo_id):
-    pass
+    if request.method == 'POST':
+        todo = get_object_or_404(Todos, id=todo_id)
+        new_content = request.POST.get('content')
+        if new_content != None:
+            todo.content = new_content
+            todo.save()
+
+        return redirect('home')
