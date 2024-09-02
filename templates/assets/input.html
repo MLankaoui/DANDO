@@ -1,28 +1,35 @@
 {% block content %}
-    <form action="/" method="POST">
-        {% csrf_token %}
-        <label for="content">
-            <h1 style="display: inline; font-weight: bolder; color:black;">add:</h1>
-        </label>
-        <input type="text" id="content" name="content" class="add-todo" value="">
-        <button class="add" type="submit">Add</button>
-        <br><br>
-    </form>
-    <ul>
-        {% for todo in todos %}
-            <li class="todos">
-                {{ todo.content }} 
-                <form action="{% url 'delete_todo' todo.id %}" method="POST" style="display:inline;">
-                    {% csrf_token %}
-                    <button class="delete" type="submit">Delete</button>
-                </form>
+    <div class="container mt-5">
+        <form action="/" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="content">
+                    <h1 class="font-weight-bold text-dark">Add:</h1>
+                </label>
+                <input type="text" id="content" name="content" class="form-control" placeholder="Enter your todo">
+            </div>
+            <button class="btn btn-primary" type="submit">Add</button>
+        </form>
 
-                <form action="{% url 'update_todo' todo.id %}" method="POST" style="display:inline;">
-                    {% csrf_token %}
-                    <input type="text" name="content" value="{{ todo.content }}">
-                    <button class="update" type="submit">Update</button>
-                </form>
-            </li>
-        {% endfor %}
-    </ul>
+        <ul class="list-group mt-4">
+            {% for todo in todos %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ todo.content }} 
+
+                    <div>
+                        <form action="{% url 'delete_todo' todo.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                        </form>
+
+                        <form action="{% url 'update_todo' todo.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <input type="text" name="content" value="{{ todo.content }}" class="form-control form-control-sm d-inline-block w-auto">
+                            <button class="btn btn-success btn-sm" type="submit">Update</button>
+                        </form>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock content %}
