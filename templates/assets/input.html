@@ -1,8 +1,16 @@
 {% block content %}
-    <form action="">
-        <label for="fname"> <h1 style="display: inline; font-weight: bolder; color:black;" > add: </h1></label>
-        <input type="text" id="fname" name="fname" class="add-todo">
-        <button class="add" type="submit"> Add </button>
+    <form action="/" method="POST">
+        {% csrf_token %}
+        <label for="content">
+            <h1 style="display: inline; font-weight: bolder; color:black;">add:</h1>
+        </label>
+        <input type="text" id="content" name="content" class="add-todo" value="">
+        <button class="add" type="submit">Add</button>
         <br><br>
     </form>
+    <ul>
+        {% for todo in todos %}
+            <li class="todos">{{ todo.content }}</li>
+        {% endfor %}
+    </ul>
 {% endblock content %}

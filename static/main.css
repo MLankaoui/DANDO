@@ -28,3 +28,11 @@
     font-size:larger;
     cursor: pointer;
 }
+
+.todos {
+    padding: 20px;
+    list-style: none;
+    border: 1px solid black;
+    background: white;
+    font-size: larger;
+}
