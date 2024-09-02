@@ -3,11 +3,16 @@ from todo.models import Todos
 
 
 def home(request):
-    if request.method == "POST":
-        content = request.POST.get('content')
+    context = {}
+
+    if request.method == 'POST':
+        content = request.POST.get('content') # retrieving data from the post request
+
         if content != None:
             Todos.objects.create(content=content)
             return redirect('home')
-
-    todos = Todos.objects.all()
-    return render(request, 'index.html', {'todos': todos})
+        
+    context = {
+        "todos": Todos.objects.all()
+    }    
+    return render(request, 'index.html', context)
